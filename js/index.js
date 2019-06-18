@@ -25,34 +25,46 @@ navOptions.addEventListener('mouseover', function(event){
     event.target.style.fontWeight = "bold";
 });
 
-//4. CONSOLE LOG WHEN DESTINATION DIV IS CLICKED ON
+//4-5. DRAG THE BUS AND MAKE IT BIG, MOUSE OUT TO SHRINK IT AGAIN
+const funBus = document.querySelector(".intro > img");
+funBus.addEventListener('drag', function(event){
+    event.target.style.transform = "scale(2)";
+});
+funBus.addEventListener('mouseout', function(event){
+    event.target.style.transform = "scale(1)";
+});
+
+
+//6. CONSOLE LOG WHEN DESTINATION DIV IS CLICKED ON
 const buttonOne = document.querySelector(".btn");
 const buttonDiv = document.querySelector(".destination")
 buttonDiv.addEventListener('click', function(event){
     console.log(`The div was clicked at: ${event}`);
 });
 
-//5. KEEP NAV LINKS FROM RELOADING
+//7. KEEP NAV LINKS FROM RELOADING
 navOptions.addEventListener('click', function(event){
     event.preventDefault();
     console.log('The nav link was clicked');
 });
 
-//6. MAKE THE HEADER DISAPPEAR
+//8. MAKE THE HEADER DISAPPEAR
 const body = document.querySelector('body');
 const header = document.querySelector('header');
 body.addEventListener("keydown", function(){
     header.style.opacity = "0";
 });
 
-//7. BRING THE HEADER BACK
+//9. BRING THE HEADER BACK
 const navItems = document.querySelector('.nav-container');
 navItems.addEventListener("mouseenter", function(){
     header.style.opacity = "1";
 })
 
-//8. PLAY WITH THE WHEEL FUNCTION
+//10. PLAY WITH THE WHEEL FUNCTION
 body.addEventListener('wheel', function scrolling(){
     alert("Keep Scrolling");
     body.removeEventListener('wheel', scrolling);
 });
+
+//10. ANIMATE?
