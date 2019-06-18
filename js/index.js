@@ -19,9 +19,13 @@ openPop.addEventListener('click', function(){
 });
 closePop.addEventListener('click', hidePopupListener);
 
-//FONT CHANGE ON NAV OPTIONS
+//FONT BOLD ON NAV HOME
 const navOptions = document.querySelector('.nav-link');
 navOptions.addEventListener('mouseover', function(event){
     event.target.style.fontWeight = "bold";
 });
+
+
+
+
 
